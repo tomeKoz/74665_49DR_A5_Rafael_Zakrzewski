@@ -1,0 +1,13 @@
+C:\Users\rafae\Desktop\cccc\cc\bin\Debug\netcoreapp3.1\cc.exe
+C:\Users\rafae\Desktop\cccc\cc\bin\Debug\netcoreapp3.1\cc.deps.json
+C:\Users\rafae\Desktop\cccc\cc\bin\Debug\netcoreapp3.1\cc.runtimeconfig.json
+C:\Users\rafae\Desktop\cccc\cc\bin\Debug\netcoreapp3.1\cc.runtimeconfig.dev.json
+C:\Users\rafae\Desktop\cccc\cc\bin\Debug\netcoreapp3.1\cc.dll
+C:\Users\rafae\Desktop\cccc\cc\bin\Debug\netcoreapp3.1\cc.pdb
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.csprojAssemblyReference.cache
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.AssemblyInfoInputs.cache
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.AssemblyInfo.cs
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.csproj.CoreCompileInputs.cache
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.dll
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.pdb
+C:\Users\rafae\Desktop\cccc\cc\obj\Debug\netcoreapp3.1\cc.genruntimeconfig.cache
