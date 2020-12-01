@@ -19,20 +19,18 @@ namespace Super_przygoda
         {
             InitializeComponent();
 
-            Location location = new Location();
-            location.ID = 1;
-            location.Name = "Home";
-            location.Description = "This is your house.";
+            Location lokacja = new Location(1, "Stacja", "To jest twoja stacja dokująca");
 
-            _player = new Player();
 
-            _player.CurrentHitPoints = 100;
-            _player.MaximumHitPoints = 100;
-            _player.CurrentBatteries = 100;
-            _player.MaximumBatteries = 100;
-            _player.Platinum = 20;
-            _player.ExperiencePoints = 0;
-            _player.Level = 1;
+            _player = new Player(100,100,100,100,10,0,1);
+
+           // _player.CurrentHitPoints = 100;
+           // _player.MaximumHitPoints = 100;
+           // _player.CurrentBatteries = 100;
+           // _player.MaximumBatteries = 100;
+           // _player.Platinum = 20;
+           // _player.ExperiencePoints = 0;
+           // _player.Level = 1;
 
             lblżycie.Text = _player.CurrentHitPoints.ToString();
             lblbaterie.Text = _player.CurrentBatteries.ToString();
@@ -41,7 +39,7 @@ namespace Super_przygoda
             lblpoziom.Text = _player.Level.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -51,7 +49,7 @@ namespace Super_przygoda
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Label5_Click(object sender, EventArgs e)
         {
 
         }

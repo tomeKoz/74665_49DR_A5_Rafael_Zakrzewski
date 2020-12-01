@@ -9,5 +9,9 @@ namespace silnik
     public class RepairKit : Item
     {
         public int AmountToHeal { get; set; }
+        public RepairKit(int id, string name, string namePlural ,int amountToHeal): base(id,name,namePlural)
+        {
+            AmountToHeal = amountToHeal;
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace Super_przygoda
             this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pkt.Konstrukcyjne";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -118,7 +118,7 @@ namespace Super_przygoda
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Baterie";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // lblbaterie
             // 
