@@ -53,5 +53,25 @@ namespace Super_przygoda
         {
 
         }
+
+        private void btnProsto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btenLewo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrawo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
