@@ -24,5 +24,6 @@ namespace silnik
             Inventory = new List<InvertoryItem>();
             Quests = new List<PlayerQuest>();
         }
+        public Location CurrentLocation { get; set; }
     }
 }

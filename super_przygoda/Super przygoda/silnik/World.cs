@@ -13,6 +13,7 @@ namespace silnik
         public static readonly List<Quest> Quests = new List<Quest>();
         public static readonly List<Location> Locations = new List<Location>();
 
+        public const int ITEM_ID_SUN_SAILS = 11;
         public const int ITEM_ID_REPAIR_KIT = 7; 
         public const int ITEM_ID_RAKIETY_FOTONOWE = 6;
         public const int ITEM_ID_PODSTAWOWE_DZIAŁO = 1;
@@ -50,9 +51,10 @@ namespace silnik
         }
         private static void PopulateItems()
         {
-            Items.Add(new RepairKit(ITEM_ID_REPAIR_KIT, "Zestaw naprawczy", "Zestaw naprawczy", 50));
-            Items.Add(new Weapon(ITEM_ID_PODSTAWOWE_DZIAŁO, "Podstawowe działko", "Podstawowe działko", 0, 50));
-            Items.Add(new Weapon(ITEM_ID_RAKIETY_FOTONOWE, "Rakiety Fotonowe", "Rakiety Fotonowe", 30, 100));
+            Items.Add(new SunSails(ITEM_ID_SUN_SAILS, "Żagle słoneczne", "Żagle słoneczne", 50));
+            Items.Add(new RepairKit(ITEM_ID_REPAIR_KIT, "Zestaw naprawczy", "Zestaw naprawczy", 50,10));
+            Items.Add(new Weapon(ITEM_ID_PODSTAWOWE_DZIAŁO, "Podstawowe działko", "Podstawowe działko", 0, 50,9));
+            Items.Add(new Weapon(ITEM_ID_RAKIETY_FOTONOWE, "Rakiety Fotonowe", "Rakiety Fotonowe", 30, 100,15));
             Items.Add(new Item(ITEM_ID_DENOBIULAŃSKIE_PIJAWKI, "Denobiulańskie pijawki", "Denobiulańskie pijawki"));
             Items.Add(new Item(ITEM_ID_SKÓRA_VARGA,"Skóra Varga", "Skóra Varga"));
             Items.Add(new Item(ITEM_ID_HORĄGIEW_DALTURCZYKÓW, "Horągiew Dalturczyków", "Horągiew Dalturczyków"));
@@ -152,15 +154,15 @@ namespace silnik
 
             terytoriumTemaran.LocationLewo = jedwabnySzlak;
 
-            Location.Add(dok);
-            Location.Add(ceres);
-            Location.Add(guardPost);
-            Location.Add(terytoriumEvenków);
-            Location.Add(szlakEvenków);
-            Location.Add(terytoriumXobian);
-            Location.Add(granicaZDalturczykami);
-            Location.Add(jedwabnySzlak);
-            Location.Add(terytoriumTemaran);
+            Locations.Add(dok);
+            Locations.Add(ceres);
+            Locations.Add(guardPost);
+            Locations.Add(terytoriumEvenków);
+            Locations.Add(szlakEvenków);
+            Locations.Add(terytoriumXobian);
+            Locations.Add(granicaZDalturczykami);
+            Locations.Add(jedwabnySzlak);
+            Locations.Add(terytoriumTemaran);
         }
         public static Item ItemByID(int id)
         { 

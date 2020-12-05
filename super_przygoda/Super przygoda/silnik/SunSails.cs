@@ -9,7 +9,7 @@ namespace silnik
     public class SunSails : Item
     {
         public int AmountToCharge { get; set; }
-        public SunSails(int amountToCharge, int id, string name, string namePlural) : base (id,name,namePlural)
+        public SunSails( int id, string name, string namePlural,int amountToCharge) : base (id,name,namePlural)
         {
             AmountToCharge = amountToCharge;
         }

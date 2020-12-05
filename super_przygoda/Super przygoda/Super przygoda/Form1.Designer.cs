@@ -41,19 +41,19 @@ namespace Super_przygoda
             this.lblbaterie = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboWeapons = new System.Windows.Forms.ComboBox();
-            this.cboPotions = new System.Windows.Forms.ComboBox();
+            this.cboRepairKits = new System.Windows.Forms.ComboBox();
             this.cboSunSails = new System.Windows.Forms.ComboBox();
             this.btnUseWeapon = new System.Windows.Forms.Button();
-            this.btnUsePotion = new System.Windows.Forms.Button();
+            this.btnUseRepairKit = new System.Windows.Forms.Button();
             this.btnPrawo = new System.Windows.Forms.Button();
-            this.btenLewo = new System.Windows.Forms.Button();
+            this.btnLewo = new System.Windows.Forms.Button();
             this.btnProsto = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.dgvQuests = new System.Windows.Forms.DataGridView();
             this.btnUseSunSails = new System.Windows.Forms.Button();
+            this.rtbLocation = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuests)).BeginInit();
             this.SuspendLayout();
@@ -162,13 +162,13 @@ namespace Super_przygoda
             this.cboWeapons.Size = new System.Drawing.Size(121, 28);
             this.cboWeapons.TabIndex = 12;
             // 
-            // cboPotions
+            // cboRepairKits
             // 
-            this.cboPotions.FormattingEnabled = true;
-            this.cboPotions.Location = new System.Drawing.Point(449, 676);
-            this.cboPotions.Name = "cboPotions";
-            this.cboPotions.Size = new System.Drawing.Size(121, 28);
-            this.cboPotions.TabIndex = 13;
+            this.cboRepairKits.FormattingEnabled = true;
+            this.cboRepairKits.Location = new System.Drawing.Point(449, 676);
+            this.cboRepairKits.Name = "cboRepairKits";
+            this.cboRepairKits.Size = new System.Drawing.Size(121, 28);
+            this.cboRepairKits.TabIndex = 13;
             // 
             // cboSunSails
             // 
@@ -186,15 +186,17 @@ namespace Super_przygoda
             this.btnUseWeapon.TabIndex = 15;
             this.btnUseWeapon.Text = "Użyj";
             this.btnUseWeapon.UseVisualStyleBackColor = true;
+            this.btnUseWeapon.Click += new System.EventHandler(this.btnUseWeapon_Click);
             // 
-            // btnUsePotion
+            // btnUseRepairKit
             // 
-            this.btnUsePotion.Location = new System.Drawing.Point(478, 710);
-            this.btnUsePotion.Name = "btnUsePotion";
-            this.btnUsePotion.Size = new System.Drawing.Size(75, 35);
-            this.btnUsePotion.TabIndex = 16;
-            this.btnUsePotion.Text = "Użyj";
-            this.btnUsePotion.UseVisualStyleBackColor = true;
+            this.btnUseRepairKit.Location = new System.Drawing.Point(478, 710);
+            this.btnUseRepairKit.Name = "btnUseRepairKit";
+            this.btnUseRepairKit.Size = new System.Drawing.Size(75, 35);
+            this.btnUseRepairKit.TabIndex = 16;
+            this.btnUseRepairKit.Text = "Użyj";
+            this.btnUseRepairKit.UseVisualStyleBackColor = true;
+            this.btnUseRepairKit.Click += new System.EventHandler(this.btnUseRepairKit_Click);
             // 
             // btnPrawo
             // 
@@ -206,15 +208,15 @@ namespace Super_przygoda
             this.btnPrawo.UseVisualStyleBackColor = true;
             this.btnPrawo.Click += new System.EventHandler(this.btnPrawo_Click);
             // 
-            // btenLewo
+            // btnLewo
             // 
-            this.btenLewo.Location = new System.Drawing.Point(354, 513);
-            this.btenLewo.Name = "btenLewo";
-            this.btenLewo.Size = new System.Drawing.Size(118, 36);
-            this.btenLewo.TabIndex = 18;
-            this.btenLewo.Text = "Leć w Lewo";
-            this.btenLewo.UseVisualStyleBackColor = true;
-            this.btenLewo.Click += new System.EventHandler(this.btenLewo_Click);
+            this.btnLewo.Location = new System.Drawing.Point(354, 513);
+            this.btnLewo.Name = "btnLewo";
+            this.btnLewo.Size = new System.Drawing.Size(118, 36);
+            this.btnLewo.TabIndex = 18;
+            this.btnLewo.Text = "Leć w Lewo";
+            this.btnLewo.UseVisualStyleBackColor = true;
+            this.btnLewo.Click += new System.EventHandler(this.btenLewo_Click);
             // 
             // btnProsto
             // 
@@ -234,23 +236,15 @@ namespace Super_przygoda
             this.btnBack.TabIndex = 20;
             this.btnBack.Text = "Zawróć";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnback_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // richTextBox1
+            // rtbMessages
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(347, 19);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(360, 105);
-            this.richTextBox1.TabIndex = 21;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(347, 147);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(360, 286);
-            this.richTextBox2.TabIndex = 22;
-            this.richTextBox2.Text = "";
+            this.rtbMessages.Location = new System.Drawing.Point(347, 147);
+            this.rtbMessages.Name = "rtbMessages";
+            this.rtbMessages.Size = new System.Drawing.Size(360, 286);
+            this.rtbMessages.TabIndex = 22;
+            this.rtbMessages.Text = "";
             // 
             // dgvInventory
             // 
@@ -296,25 +290,35 @@ namespace Super_przygoda
             this.btnUseSunSails.TabIndex = 25;
             this.btnUseSunSails.Text = "Użyj";
             this.btnUseSunSails.UseVisualStyleBackColor = true;
+            this.btnUseSunSails.Click += new System.EventHandler(this.btnUseSunSails_Click);
+            // 
+            // rtbLocation
+            // 
+            this.rtbLocation.Location = new System.Drawing.Point(347, 20);
+            this.rtbLocation.Name = "rtbLocation";
+            this.rtbLocation.Size = new System.Drawing.Size(360, 117);
+            this.rtbLocation.TabIndex = 26;
+            this.rtbLocation.Text = "";
+            this.rtbLocation.TextChanged += new System.EventHandler(this.rtbLocation_TextChanged);
             // 
             // Przygoda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 750);
+            this.Controls.Add(this.rtbLocation);
             this.Controls.Add(this.btnUseSunSails);
             this.Controls.Add(this.dgvQuests);
             this.Controls.Add(this.dgvInventory);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnProsto);
-            this.Controls.Add(this.btenLewo);
+            this.Controls.Add(this.btnLewo);
             this.Controls.Add(this.btnPrawo);
-            this.Controls.Add(this.btnUsePotion);
+            this.Controls.Add(this.btnUseRepairKit);
             this.Controls.Add(this.btnUseWeapon);
             this.Controls.Add(this.cboSunSails);
-            this.Controls.Add(this.cboPotions);
+            this.Controls.Add(this.cboRepairKits);
             this.Controls.Add(this.cboWeapons);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblbaterie);
@@ -351,19 +355,19 @@ namespace Super_przygoda
         private System.Windows.Forms.Label lblbaterie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboWeapons;
-        private System.Windows.Forms.ComboBox cboPotions;
+        private System.Windows.Forms.ComboBox cboRepairKits;
         private System.Windows.Forms.ComboBox cboSunSails;
         private System.Windows.Forms.Button btnUseWeapon;
-        private System.Windows.Forms.Button btnUsePotion;
+        private System.Windows.Forms.Button btnUseRepairKit;
         private System.Windows.Forms.Button btnPrawo;
-        private System.Windows.Forms.Button btenLewo;
+        private System.Windows.Forms.Button btnLewo;
         private System.Windows.Forms.Button btnProsto;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtbMessages;
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.DataGridView dgvQuests;
         private System.Windows.Forms.Button btnUseSunSails;
+        private System.Windows.Forms.RichTextBox rtbLocation;
     }
 }
 
