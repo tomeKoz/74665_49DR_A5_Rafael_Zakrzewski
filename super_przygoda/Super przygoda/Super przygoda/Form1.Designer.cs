@@ -290,7 +290,7 @@ namespace Super_przygoda
             this.btnUseSunSails.TabIndex = 25;
             this.btnUseSunSails.Text = "Użyj";
             this.btnUseSunSails.UseVisualStyleBackColor = true;
-            this.btnUseSunSails.Click += new System.EventHandler(this.btnUseSunSails_Click);
+            this.btnUseSunSails.Click += new System.EventHandler(btnUseSunSails_Click);
             // 
             // rtbLocation
             // 
