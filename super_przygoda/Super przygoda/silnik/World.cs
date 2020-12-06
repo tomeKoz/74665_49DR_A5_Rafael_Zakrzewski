@@ -137,7 +137,7 @@ namespace silnik
             ceres.LocationLewo = terytoriumXobian;
 
             terytoriumXobian.LocationPrawo = ceres;
-            terytoriumXobian.LocationPrawo = granicaZDalturczykami;
+            terytoriumXobian.LocationLewo = granicaZDalturczykami;
 
             granicaZDalturczykami.LocationPrawo = terytoriumXobian;
 

@@ -29,7 +29,7 @@ namespace Super_przygoda
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblHitPoints = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@ namespace Super_przygoda
             this.lblplatinium = new System.Windows.Forms.Label();
             this.lbldoświadczenie = new System.Windows.Forms.Label();
             this.lblpoziom = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.lblbaterie = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboWeapons = new System.Windows.Forms.ComboBox();
@@ -58,15 +58,15 @@ namespace Super_przygoda
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuests)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblHitPoints
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pkt.Konstrukcyjne";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.lblHitPoints.AutoSize = true;
+            this.lblHitPoints.Location = new System.Drawing.Point(18, 20);
+            this.lblHitPoints.Name = "lblHitPoints";
+            this.lblHitPoints.Size = new System.Drawing.Size(135, 20);
+            this.lblHitPoints.TabIndex = 0;
+            this.lblHitPoints.Text = "Pkt.Konstrukcyjne";
+            this.lblHitPoints.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -127,15 +127,15 @@ namespace Super_przygoda
             this.lblpoziom.Size = new System.Drawing.Size(0, 20);
             this.lblpoziom.TabIndex = 7;
             // 
-            // label5
+            // lbl1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Baterie";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(18, 40);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(60, 20);
+            this.lbl1.TabIndex = 9;
+            this.lbl1.Text = "Baterie";
+            this.lbl1.Click += new System.EventHandler(this.Label5_Click);
             // 
             // lblbaterie
             // 
@@ -286,11 +286,11 @@ namespace Super_przygoda
             // 
             this.btnUseSunSails.Location = new System.Drawing.Point(612, 710);
             this.btnUseSunSails.Name = "btnUseSunSails";
-            this.btnUseSunSails.Size = new System.Drawing.Size(75, 23);
+            this.btnUseSunSails.Size = new System.Drawing.Size(75, 35);
             this.btnUseSunSails.TabIndex = 25;
             this.btnUseSunSails.Text = "Użyj";
             this.btnUseSunSails.UseVisualStyleBackColor = true;
-            this.btnUseSunSails.Click += new System.EventHandler(btnUseSunSails_Click);
+            this.btnUseSunSails.Click += new System.EventHandler(this.btnUseSunSails_Click);
             // 
             // rtbLocation
             // 
@@ -322,7 +322,7 @@ namespace Super_przygoda
             this.Controls.Add(this.cboWeapons);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblbaterie);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblpoziom);
             this.Controls.Add(this.lbldoświadczenie);
             this.Controls.Add(this.lblplatinium);
@@ -330,7 +330,7 @@ namespace Super_przygoda
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblHitPoints);
             this.Name = "Przygoda";
             this.Text = "Moja gra";
             this.Load += new System.EventHandler(this.Przygoda_Load);
@@ -343,7 +343,7 @@ namespace Super_przygoda
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHitPoints;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -351,7 +351,7 @@ namespace Super_przygoda
         private System.Windows.Forms.Label lblplatinium;
         private System.Windows.Forms.Label lbldoświadczenie;
         private System.Windows.Forms.Label lblpoziom;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblbaterie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboWeapons;

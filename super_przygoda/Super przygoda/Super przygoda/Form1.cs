@@ -25,6 +25,7 @@ namespace Super_przygoda
             MoveTo(World.LocationById(World.LOCATION_ID_DOK));
             _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_PODSTAWOWE_DZIAŁO), 1));
             _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_SUN_SAILS), 1));
+            _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_REPAIR_KIT), 1));
 
             lblżycie.Text = _player.CurrentHitPoints.ToString();
             lblbaterie.Text = _player.CurrentBatteries.ToString();
