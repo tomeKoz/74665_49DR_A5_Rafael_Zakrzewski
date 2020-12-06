@@ -13,8 +13,8 @@ using silnik;
 namespace Super_przygoda
 {
     public partial class Przygoda : Form
-
-    {
+    { 
+    
         private Player _player;
         private Monster _currentMonster;
         public Przygoda()
