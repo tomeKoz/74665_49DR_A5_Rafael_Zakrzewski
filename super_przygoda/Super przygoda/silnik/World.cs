@@ -13,17 +13,17 @@ namespace silnik
         public static readonly List<Quest> Quests = new List<Quest>();
         public static readonly List<Location> Locations = new List<Location>();
 
-        public const int ITEM_ID_SUN_SAILS = 11;
-        public const int ITEM_ID_REPAIR_KIT = 7; 
-        public const int ITEM_ID_RAKIETY_FOTONOWE = 6;
         public const int ITEM_ID_PODSTAWOWE_DZIAŁO = 1;
         public const int ITEM_ID_DENOBIULAŃSKIE_PIJAWKI = 2;
         public const int ITEM_ID_SKÓRA_VARGA = 3;
         public const int ITEM_ID_HORĄGIEW_DALTURCZYKÓW = 4;
         public const int ITEM_ID_MUNDUR_DALTURCZYKÓW = 5;
+        public const int ITEM_ID_RAKIETY_FOTONOWE = 6;
+        public const int ITEM_ID_REPAIR_KIT = 7; 
         public const int ITEM_ID_SKRZYDŁA_KESOLOMA = 8;
         public const int ITEM_ID_FUTRO_KESOLOMA = 9;
         public const int ITEM_ID_PRZEPUSTKA = 10;
+        public const int ITEM_ID_SUN_SAILS = 11;
 
         public const int MONSTER_ID_FURANIE_DROBNICOWIEC = 1;
         public const int MONSTER_ID_DALTURCZYCY_FREGATA = 2;
@@ -51,7 +51,7 @@ namespace silnik
         }
         private static void PopulateItems()
         {
-            Items.Add(new SunSails(ITEM_ID_SUN_SAILS, "Żagle słoneczne", "Żagle słoneczne", 50));
+            Items.Add(new SunSails(ITEM_ID_SUN_SAILS, "Żagle słoneczne", "Żagle słoneczne",50));
             Items.Add(new RepairKit(ITEM_ID_REPAIR_KIT, "Zestaw naprawczy", "Zestaw naprawczy", 50,10));
             Items.Add(new Weapon(ITEM_ID_PODSTAWOWE_DZIAŁO, "Podstawowe działko", "Podstawowe działko", 0, 50,9));
             Items.Add(new Weapon(ITEM_ID_RAKIETY_FOTONOWE, "Rakiety Fotonowe", "Rakiety Fotonowe", 30, 100,15));

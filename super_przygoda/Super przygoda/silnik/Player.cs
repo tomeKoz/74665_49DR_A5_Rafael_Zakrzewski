@@ -19,6 +19,8 @@ namespace silnik
         public Player(int currentHitPoints, int maximumHitPoints, int curentBatteries, int maximumbatteries, int platinum, int experiencePoints, int level)
             : base(currentHitPoints, maximumHitPoints)
         {
+            CurrentBatteries = curentBatteries;
+            MaximumBatteries = maximumbatteries;
             Platinum = platinum;
             ExperiencePoints = experiencePoints;
             Level = level;

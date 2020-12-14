@@ -278,76 +278,79 @@ namespace Super_przygoda
             Weapon currentWeapon = (Weapon)cboWeapons.SelectedItem;
                 int damageToMonster = RandomNumberGenerator.NumberBetween(
                         currentWeapon.MinimumDamage, currentWeapon.MaximumDamage);
-
+            if(_player.CurrentLocation.MonsterLivinHere !=null)
+            { 
             _currentMonster.CurrentHitPoints -= damageToMonster;
 
             rtbMessages.Text += "Zatakowałeś " + _currentMonster.Name + "zadając " + damageToMonster.ToString() + " pkt obrażeń" + Environment.NewLine;
 
-            if (_currentMonster.CurrentHitPoints<=0)
-            {
-                rtbMessages.Text += Environment.NewLine;
-                rtbMessages.Text += "Pokonałeś" + _currentMonster.Name + Environment.NewLine;
-
-                _player.Platinum += _currentMonster.RewardPlatinium;
-                rtbMessages.Text += "Otrzymujesz" +
-                    _currentMonster.RewardPlatinium.ToString() + "Platinium" + Environment.NewLine;
-
-                List<InvertoryItem> lootedItems = new List<InvertoryItem>();
-                foreach(LootItem lootItem in _currentMonster.LootTable)
+                if (_currentMonster.CurrentHitPoints <= 0)
                 {
-                    if(RandomNumberGenerator.NumberBetween(1,100)<= lootItem.DropPercentage)
-                    {
-                        lootedItems.Add(new InvertoryItem(lootItem.Details, 1));
-                    }
-                }
-                if(lootedItems.Count ==0)
-                {
+                    rtbMessages.Text += Environment.NewLine;
+                    rtbMessages.Text += "Pokonałeś" + _currentMonster.Name + Environment.NewLine;
+
+                    _player.Platinum += _currentMonster.RewardPlatinium;
+                    rtbMessages.Text += "Otrzymujesz" +
+                        _currentMonster.RewardPlatinium.ToString() + "Platinium" + Environment.NewLine;
+
+                    List<InvertoryItem> lootedItems = new List<InvertoryItem>();
                     foreach (LootItem lootItem in _currentMonster.LootTable)
                     {
-                        if(lootItem.IsDefaultItem)
+                        if (RandomNumberGenerator.NumberBetween(1, 100) <= lootItem.DropPercentage)
                         {
                             lootedItems.Add(new InvertoryItem(lootItem.Details, 1));
                         }
                     }
-                }
-                foreach(InvertoryItem invertoryItem in lootedItems)
-                {
-                    _player.AddItemToInvetory(invertoryItem.Details);
-                    if(invertoryItem.Quantity ==1)
+                    if (lootedItems.Count == 0)
                     {
-                        rtbMessages.Text += "Zdobywasz" + invertoryItem.Quantity.ToString() + " " + invertoryItem.Details.Name + Environment.NewLine;
+                        foreach (LootItem lootItem in _currentMonster.LootTable)
+                        {
+                            if (lootItem.IsDefaultItem)
+                            {
+                                lootedItems.Add(new InvertoryItem(lootItem.Details, 1));
+                            }
+                        }
                     }
-                    else
+                    foreach (InvertoryItem invertoryItem in lootedItems)
                     {
-                        rtbMessages.Text += "Zdobywasz" + invertoryItem.Quantity.ToString() + " " + invertoryItem.Details.NamePlural + Environment.NewLine;
+                        _player.AddItemToInvetory(invertoryItem.Details);
+                        if (invertoryItem.Quantity == 1)
+                        {
+                            rtbMessages.Text += "Zdobywasz" + invertoryItem.Quantity.ToString() + " " + invertoryItem.Details.Name + Environment.NewLine;
+                        }
+                        else
+                        {
+                            rtbMessages.Text += "Zdobywasz" + invertoryItem.Quantity.ToString() + " " + invertoryItem.Details.NamePlural + Environment.NewLine;
+                        }
                     }
+                    lblżycie.Text = _player.CurrentHitPoints.ToString();
+                    lblplatinium.Text = _player.Platinum.ToString();
+                    lbldoświadczenie.Text = _player.ExperiencePoints.ToString();
+                    lblpoziom.Text = _player.Level.ToString();
+                    lblbaterie.Text = _player.CurrentBatteries.ToString();
+
+                    UpdateInventoryListInUI();
+                    UpdateWeaponListInUI();
+                    UpdateRepaiKitsListInUI();
+
+                    rtbMessages.Text += Environment.NewLine;
+                    MoveTo(_player.CurrentLocation);
+
                 }
-                lblżycie.Text = _player.CurrentHitPoints.ToString();
-                lblplatinium.Text = _player.Platinum.ToString();
-                lbldoświadczenie.Text = _player.ExperiencePoints.ToString();
-                lblpoziom.Text = _player.Level.ToString();
-                lblbaterie.Text = _player.CurrentBatteries.ToString();
-
-                UpdateInventoryListInUI();
-                UpdateWeaponListInUI();
-                UpdateRepaiKitsListInUI();
-
-                rtbMessages.Text += Environment.NewLine;
-                MoveTo(_player.CurrentLocation);
-            }
-            else
-            {
-                int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
-
-                rtbMessages.Text += _currentMonster.Name + "zadaje Ci" + damageToPlayer.ToString() + "Punktów obrażenia" + Environment.NewLine;
-
-                _player.CurrentHitPoints -= damageToPlayer;
-                lblżycie.Text = _player.CurrentHitPoints.ToString();
-                if (_player.CurrentHitPoints<=0)
+                else
                 {
-                    rtbMessages.Text += "Ten przebrzydły" + _currentMonster.Name + "zabija Cię" + Environment.NewLine;
+                    int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
 
-                    MoveTo(World.LocationById(World.LOCATION_ID_DOK));
+                    rtbMessages.Text += _currentMonster.Name + "zadaje Ci" + damageToPlayer.ToString() + "Punktów obrażenia" + Environment.NewLine;
+
+                    _player.CurrentHitPoints -= damageToPlayer;
+                    lblżycie.Text = _player.CurrentHitPoints.ToString();
+                    if (_player.CurrentHitPoints <= 0)
+                    {
+                        rtbMessages.Text += "Ten przebrzydły" + _currentMonster.Name + "zabija Cię" + Environment.NewLine;
+
+                        MoveTo(World.LocationById(World.LOCATION_ID_DOK));
+                    }
                 }
             }
         }
@@ -370,15 +373,19 @@ namespace Super_przygoda
                     break;
                 }
             }
-            rtbMessages.Text += "Użyłeś" + repairKit.Name + Environment.NewLine;
+            rtbMessages.Text += "Użyłeś " + repairKit.Name + Environment.NewLine;
 
-            int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
-            rtbMessages.Text += _currentMonster.Name + "zadaje Ci" + damageToPlayer.ToString() + "obrażeń" + Environment.NewLine;
-            _player.CurrentHitPoints -= damageToPlayer;
-            if(_player.CurrentHitPoints <=0)
+            if (_player.CurrentLocation.MonsterLivinHere != null)
             {
-                rtbMessages.Text += "Przebrzydły" + _currentMonster.Name + "Zabija Cię" + Environment.NewLine;
-                MoveTo(World.LocationById(World.LOCATION_ID_DOK));
+
+                int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
+                rtbMessages.Text += _currentMonster.Name + "zadaje Ci" + damageToPlayer.ToString() + "obrażeń" + Environment.NewLine;
+                _player.CurrentHitPoints -= damageToPlayer;
+                if (_player.CurrentHitPoints <= 0)
+                {
+                    rtbMessages.Text += "Przebrzydły" + _currentMonster.Name + "Zabija Cię" + Environment.NewLine;
+                    MoveTo(World.LocationById(World.LOCATION_ID_DOK));
+                }
             }
             lblżycie.Text = _player.CurrentHitPoints.ToString();
             UpdateInventoryListInUI();
@@ -393,7 +400,7 @@ namespace Super_przygoda
             {
                 _player.CurrentBatteries = _player.MaximumBatteries;
             }
-            rtbMessages.Text = "Naładowałeś baterie przy pomocy:" + sunSails.Name + Environment.NewLine;
+            rtbMessages.Text = "Naładowałeś baterie przy pomocy: " + sunSails.Name + Environment.NewLine;
             lblbaterie.Text = _player.CurrentBatteries.ToString();
         }
     }
