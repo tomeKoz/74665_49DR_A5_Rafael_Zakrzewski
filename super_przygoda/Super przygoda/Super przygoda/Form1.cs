@@ -79,16 +79,20 @@ namespace Super_przygoda
                 return;
             }
             _player.CurrentLocation = newlocation;
-            btnProsto.Visible = (newlocation.LocationPrzod != null);
-            btnBack.Visible = (newlocation.LocationTył != null);
-            btnPrawo.Visible = (newlocation.LocationPrawo != null);
-            btnLewo.Visible = (newlocation.LocationLewo != null);
+            _player.CurrentBatteries = _player.CurrentBatteries - 5;
+
+            var playerHasBattery = _player.CurrentBatteries > 0;
+
+            btnProsto.Visible = (newlocation.LocationPrzod != null && playerHasBattery);
+            btnBack.Visible = (newlocation.LocationTył != null && playerHasBattery);
+            btnPrawo.Visible = (newlocation.LocationPrawo != null && playerHasBattery);
+            btnLewo.Visible = (newlocation.LocationLewo != null && playerHasBattery);
+
 
             rtbLocation.Text = newlocation.Name + Environment.NewLine;
             rtbLocation.Text += newlocation.Description + Environment.NewLine;
-
             
-            _player.CurrentBatteries = _player.CurrentBatteries - 5;
+
 
             lblżycie.Text = _player.CurrentHitPoints.ToString();
             lblbaterie.Text = _player.CurrentBatteries.ToString();
@@ -178,6 +182,8 @@ namespace Super_przygoda
             UpdateWeaponListInUI();
             UpdateRepaiKitsListInUI();
             updateSunSailsListInUI();
+
+
         }
         private void UpdateInventoryListInUI()
             { 
@@ -285,6 +291,7 @@ namespace Super_przygoda
                     }
                 }
             }
+
             cboSunSails.DataSource = sunSails;
             cboSunSails.DisplayMember = "Name";
             cboSunSails.ValueMember = "ID";
@@ -419,8 +426,16 @@ namespace Super_przygoda
             {
                 _player.CurrentBatteries = _player.MaximumBatteries;
             }
-            rtbMessages.Text = "Naładowałeś baterie przy pomocy: " + sunSails.Name + Environment.NewLine;
+            rtbMessages.Text += "Naładowałeś baterie przy pomocy: " + sunSails.Name + Environment.NewLine;
             lblbaterie.Text = _player.CurrentBatteries.ToString();
+
+            var playerHasBattery = _player.CurrentBatteries > 0;
+
+            btnProsto.Visible = playerHasBattery;
+            btnBack.Visible = playerHasBattery;
+            btnPrawo.Visible = playerHasBattery;
+            btnLewo.Visible = playerHasBattery;
+
         }
     }
 }

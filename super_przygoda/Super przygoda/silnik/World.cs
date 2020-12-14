@@ -104,6 +104,7 @@ namespace silnik
             Location dok = new Location(LOCATION_ID_DOK, "Dok",
                 "Ogromna stacja dokująca, dzieło twoje cywilizacji. To właśnie" +
                 "tu powstał twój wspaniały statek");
+
             Location ceres = new Location(LOCATION_ID_CERES, "Ceres",
                 "Planeta karłowata Ceres to największy znany nam " +
                 "obiekt pasa asteroid między Marsem i Jowieszem jeto to również umowny punkt wstępu do strefy planetarnej Ziemi");
