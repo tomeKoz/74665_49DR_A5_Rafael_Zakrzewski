@@ -90,7 +90,8 @@ namespace silnik
             get_pijawki.RewardItem = ItemByID(ITEM_ID_REPAIR_KIT);
 
             Quest get_horągiew_maklaków = new Quest(QUEST_ID_GET_HORĄGIEW_MAKLAKÓW, "Zdobądź horągiew Dalturczyków", "Udaj się" +
-                "na granicę z Dalturczykami którzy nękają Xobian i pokonaj Maklaków zdobywając minimum trzy ich horągwie" +
+                "na granicę z Dalturczykami którzy nękają Xobian i pokonaj Dalturczyków zdobywając minimum trzy ich horągwie," +
+                "pamiętaj że Dalturczyków możesz spotkać również na terytorium Temaran któży to są ich sojusznikami." +
                 ". Otrzymasz Przepustkę Podrużnika oraz 100 Platinum ", 200, 100);
             get_horągiew_maklaków.QuestCompletionItem.Add(new QuestCompletionItem(ItemByID(ITEM_ID_HORĄGIEW_DALTURCZYKÓW), 3));
             get_horągiew_maklaków.RewardItem = ItemByID(ITEM_ID_PRZEPUSTKA);
@@ -115,19 +116,24 @@ namespace silnik
                 "teraz możesz zaobserwować na swoich ekranach że fauna i flora na tej planecie są wyjątkowo bujne." +
                 "Rośnie na niej wiele drzew owocowych o przedziwnych nazwach jest też ogromna ilość zwierzyny która znacząco" +
                 "odróżnia się od tej którą poznałeś na ziemi");
+            terytoriumEvenków.QuestAvailableHere = QuestByID(QUEST_ID_GET_PIJAWKI);
             Location szlakEvenków = new Location(LOCATION_ID_SZKLAK_EVENKÓW, "Szlak Evenków",
                 "Ta część kosmosu wedłóg twoich danych stanowi szlak hanlowy Evenków");
+            szlakEvenków.MonsterLivinHere = MonsterByID(MONSTER_ID_FURANIE_DROBNICOWIEC);
             Location terytoriumXobian = new Location(LOCATION_ID_TERYTORIUM_XOBIAN, "Terytorium Xobian",
                 "Twoje sensory wykrywają zamieszkałą planetę. Początkowo widzisz jedynie Planetę która jest cała w wodzie jednak wchodząc na orbitę" +
                 "na ekranach widzisz odczyty sensorów które pokazują że podwodą znajduje się cała cywilizacja");
+            terytoriumXobian.QuestAvailableHere = QuestByID(QUEST_ID_GET_HORĄGIEW_MAKLAKÓW);
             Location granicaZDalturczykami = new Location(LOCATION_ID_GRANICA_Z_DALTURCZYKAMI, "Granica z Dalturczykami",
                 "Ten kwadrant to terytorium sporne między Dalturczykami a Xobianami. Na sensorach możesz odnotować " +
                 "trwające potyczki między obydwiema rasami które odbywają się co kilka lat świetlnych między sobą");
+            granicaZDalturczykami.MonsterLivinHere = MonsterByID(MONSTER_ID_DALTURCZYCY_FREGATA);
             Location jedwabnySzlak = new Location(LOCATION_ID_JEDWABNY_SZLAK, "Jedwabny Szlak", "Sensory wykrywają natężony " +
                 "ruch w tej części kosmosu co jest zupełnie normalne gdyż jest to główny szlak międzyplanetarnego handlu");
             Location terytoriumTemaran = new Location(LOCATION_ID_TERYTORIUM_TEMARAN, "Terytorium Temaran", "Wleciałeś na terytorium" +
                 "Temaran- wyjątkowo agresywnej cywilizacji. Sekundy po twoim zatrzymaniu słyszysz wielki wybuch i piczenie alarmu " +
                 "taktycznego w twoim statku. SZYKUJ SIĘ DO WALKI");
+            terytoriumTemaran.MonsterLivinHere = MonsterByID(MONSTER_ID_DALTURCZYCY_KANONIERKA);
 
             dok.LocationPrzod = ceres;
 

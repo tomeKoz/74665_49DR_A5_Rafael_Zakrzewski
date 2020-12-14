@@ -21,7 +21,7 @@ namespace Super_przygoda
         {
             InitializeComponent();
 
-            _player = new Player(100,100,100,100,100,0,1);
+            _player = new Player(10000000,100,100,100,100,0,1);
             MoveTo(World.LocationById(World.LOCATION_ID_DOK));
             _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_PODSTAWOWE_DZIAŁO), 1));
             _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_SUN_SAILS), 1));
@@ -341,7 +341,7 @@ namespace Super_przygoda
                 {
                     int damageToPlayer = RandomNumberGenerator.NumberBetween(0, _currentMonster.MaximumDamage);
 
-                    rtbMessages.Text += _currentMonster.Name + "zadaje Ci" + damageToPlayer.ToString() + "Punktów obrażenia" + Environment.NewLine;
+                    rtbMessages.Text += _currentMonster.Name + "zadaje Ci " + damageToPlayer.ToString() + " Punktów obrażenia" + Environment.NewLine;
 
                     _player.CurrentHitPoints -= damageToPlayer;
                     lblżycie.Text = _player.CurrentHitPoints.ToString();
@@ -373,7 +373,7 @@ namespace Super_przygoda
                     break;
                 }
             }
-            rtbMessages.Text += "Użyłeś " + repairKit.Name + Environment.NewLine;
+            rtbMessages.Text += "Użyłeś " + repairKit.Name+ " i naprawiłeś statek o "+repairKit.AmountToHeal+" Punktów Konstrukcyjnych" + Environment.NewLine;
 
             if (_player.CurrentLocation.MonsterLivinHere != null)
             {
