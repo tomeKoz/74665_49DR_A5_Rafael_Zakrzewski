@@ -21,7 +21,7 @@ namespace Super_przygoda
         {
             InitializeComponent();
 
-            _player = new Player(10000000,100,100,100,100,0,1);
+            _player = new Player(100,100,100,100,100,0,1);
             MoveTo(World.LocationById(World.LOCATION_ID_DOK));
             _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_PODSTAWOWE_DZIAŁO), 1));
             _player.Inventory.Add(new InvertoryItem(World.ItemByID(World.ITEM_ID_SUN_SAILS), 1));
@@ -87,7 +87,7 @@ namespace Super_przygoda
             rtbLocation.Text = newlocation.Name + Environment.NewLine;
             rtbLocation.Text += newlocation.Description + Environment.NewLine;
 
-            _player.CurrentHitPoints = _player.MaximumHitPoints;
+            
             _player.CurrentBatteries = _player.CurrentBatteries - 5;
 
             lblżycie.Text = _player.CurrentHitPoints.ToString();
@@ -177,15 +177,16 @@ namespace Super_przygoda
             UpdateQuestListInUI();
             UpdateWeaponListInUI();
             UpdateRepaiKitsListInUI();
+            updateSunSailsListInUI();
         }
         private void UpdateInventoryListInUI()
             { 
             
-            dgvInventory.RowHeadersVisible = false;
+            dgvInventory.RowHeadersVisible = true;
             dgvInventory.ColumnCount = 2;
-            dgvInventory.Columns[0].Name = "Nazwa";
+            dgvInventory.Columns[0].Name = "Name";
             dgvInventory.Columns[0].Width = 197;
-            dgvInventory.Columns[1].Name = "Ilość";
+            dgvInventory.Columns[1].Name = "Quantity";
 
             dgvInventory.Rows.Clear();
 
@@ -205,7 +206,7 @@ namespace Super_przygoda
             dgvQuests.RowHeadersVisible = false;
 
             dgvQuests.ColumnCount = 2;
-            dgvQuests.Columns[0].Name = "Nazwa";
+            dgvQuests.Columns[0].Name = "Name";
             dgvQuests.Columns[0].Width = 197;
             dgvQuests.Columns[1].Name = "Ukończone?";
 
@@ -239,7 +240,7 @@ namespace Super_przygoda
             else
             {
                 cboWeapons.DataSource = weapons;
-                cboWeapons.DisplayMember = "Nazwa";
+                cboWeapons.DisplayMember = "Name";
                 cboWeapons.ValueMember = "ID";
 
                 cboWeapons.SelectedIndex = 0;
@@ -266,12 +267,29 @@ namespace Super_przygoda
             else
             {
                 cboRepairKits.DataSource = repairKits;
-                cboRepairKits.DisplayMember = "Nazwa";
+                cboRepairKits.DisplayMember = "Name";
                 cboRepairKits.ValueMember = "ID";
                 cboRepairKits.SelectedIndex = 0;
             }
         }
-        
+        private void updateSunSailsListInUI()
+        {
+            List<SunSails> sunSails = new List<SunSails>();
+            foreach(InvertoryItem invertoryItem in _player.Inventory)
+            {
+                if(invertoryItem.Details is SunSails)
+                {
+                    if(invertoryItem.Quantity>0)
+                    {
+                        sunSails.Add((SunSails)invertoryItem.Details);
+                    }
+                }
+            }
+            cboSunSails.DataSource = sunSails;
+            cboSunSails.DisplayMember = "Name";
+            cboSunSails.ValueMember = "ID";
+            
+        }
 
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
@@ -332,6 +350,7 @@ namespace Super_przygoda
                     UpdateInventoryListInUI();
                     UpdateWeaponListInUI();
                     UpdateRepaiKitsListInUI();
+                    updateSunSailsListInUI();
 
                     rtbMessages.Text += Environment.NewLine;
                     MoveTo(_player.CurrentLocation);
@@ -396,7 +415,7 @@ namespace Super_przygoda
         {
             SunSails sunSails = (SunSails)cboSunSails.SelectedItem;
             _player.CurrentBatteries = (_player.CurrentBatteries + sunSails.AmountToCharge);
-            if(_player.CurrentBatteries>_player.MaximumBatteries)
+            if (_player.CurrentBatteries>_player.MaximumBatteries)
             {
                 _player.CurrentBatteries = _player.MaximumBatteries;
             }

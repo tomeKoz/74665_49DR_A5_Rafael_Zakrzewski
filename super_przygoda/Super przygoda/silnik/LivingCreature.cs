@@ -12,7 +12,7 @@ namespace silnik
     public LivingCreature (int currentHitPoints, int maximumHitPoints)
         {
             CurrentHitPoints = currentHitPoints;
-            maximumHitPoints = MaximumHitPoints;
+            MaximumHitPoints = maximumHitPoints;
         }
     }
 }
