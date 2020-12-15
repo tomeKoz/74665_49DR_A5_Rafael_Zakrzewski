@@ -1,0 +1,26 @@
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\bin\Debug\Super przygoda.exe.config
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\bin\Debug\Super przygoda.exe
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\bin\Debug\Super przygoda.pdb
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super przygoda.csprojAssemblyReference.cache
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super_przygoda.Properties.Resources.resources
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super przygoda.csproj.GenerateResource.cache
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super przygoda.csproj.CoreCompileInputs.cache
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super przygoda.exe
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super przygoda.pdb
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\bin\Debug\silnik.dll
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\bin\Debug\silnik.pdb
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super_przygoda.Przygoda.resources
+C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\Super przygoda\obj\Debug\Super przygoda.csproj.CopyComplete
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\bin\Debug\Super przygoda.exe.config
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\bin\Debug\Super przygoda.exe
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\bin\Debug\Super przygoda.pdb
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\bin\Debug\silnik.dll
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\bin\Debug\silnik.pdb
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super przygoda.csprojAssemblyReference.cache
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super_przygoda.Przygoda.resources
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super_przygoda.Properties.Resources.resources
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super przygoda.csproj.GenerateResource.cache
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super przygoda.csproj.CoreCompileInputs.cache
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super przygoda.csproj.CopyComplete
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super przygoda.exe
+C:\Users\rafae\Desktop\cccc\program Karwatka\Super przygoda\obj\Debug\Super przygoda.pdb

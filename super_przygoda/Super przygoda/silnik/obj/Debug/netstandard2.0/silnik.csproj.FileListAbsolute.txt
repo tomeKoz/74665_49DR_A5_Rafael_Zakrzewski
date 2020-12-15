@@ -1,9 +1,0 @@
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\bin\Debug\netstandard2.0\silnik.deps.json
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\bin\Debug\netstandard2.0\silnik.dll
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\bin\Debug\netstandard2.0\silnik.pdb
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\obj\Debug\netstandard2.0\silnik.csprojAssemblyReference.cache
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\obj\Debug\netstandard2.0\silnik.AssemblyInfoInputs.cache
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\obj\Debug\netstandard2.0\silnik.AssemblyInfo.cs
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\obj\Debug\netstandard2.0\silnik.csproj.CoreCompileInputs.cache
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\obj\Debug\netstandard2.0\silnik.dll
-C:\Users\rafae\Desktop\cccc\program Karwatka\super_przygoda\Super przygoda\silnik\obj\Debug\netstandard2.0\silnik.pdb
